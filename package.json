@@ -1,0 +1,22 @@
+{
+  "name": "urlshorty_tractionco",
+  "version": "1.0.0",
+  "description": "url shortner for tractionco company",
+  "main": "app.js",
+  "scripts": {
+    "server": "nodemon app.js",
+    "start-fake-server": "json-server --watch ./db.json",
+    "dev": "(cd client && npm run start) & npm run server"
+  },
+  "author": "Becki Arieli",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "json-server": "^0.15.1",
+    "nodemon": "^1.19.4",
+    "prefix": "^1.0.0",
+    "shortid": "^2.2.15"
+  }
+}

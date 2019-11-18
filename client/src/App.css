@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Btn{
+  display: block;
+  color: gray;
+  width: 100%;
+  font-size: 24px;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.Btn::placeholder {
+  color: #B0BEC5;
+}
+.success {
+  margin-top: 50px;
+  background-color: green;
+  color: white;
+  width: 100px;
+}
+a {
+  color: green
+}
