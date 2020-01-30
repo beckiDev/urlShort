@@ -4,6 +4,7 @@
   "description": "url shortner for tractionco company",
   "main": "app.js",
   "scripts": {
+    "get_all_depp": "(cd client npm i) & npm i",
     "server": "nodemon app.js",
     "start-fake-server": "json-server --watch ./db.json",
     "dev": "(cd client && npm run start) & npm run server"
