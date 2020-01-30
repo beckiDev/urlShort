@@ -1,6 +1,6 @@
 {
   "name": "urlshorty_tractionco",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "url shortner for tractionco company",
   "main": "app.js",
   "scripts": {
