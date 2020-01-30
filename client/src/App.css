@@ -59,10 +59,10 @@ a {
   font-size: 24px;
 }
 .success_button {
+  margin-top: 20px;
   font-size: 20px;
   background-color: #4BAF51;
   width: 300px;
   height: 80px;
   color: aliceblue;
-  margin-top: 10px;
 }

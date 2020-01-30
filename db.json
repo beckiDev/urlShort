@@ -89,6 +89,16 @@
       "realUrl": "https://codeburst.io/creating-custom-url-shortener-with-nodejs-de10bbbb89c7",
       "shortHash": "2B4uk3o1",
       "id": "2B4uk3o1"
+    },
+    {
+      "realUrl": "https://www.instagram.com/",
+      "shortHash": "0q94e9CA",
+      "id": "0q94e9CA"
+    },
+    {
+      "url": "http://10.51.33.116:3000/",
+      "urlType": "getSiteInfo",
+      "id": "sXy-i37"
     }
   ]
 }

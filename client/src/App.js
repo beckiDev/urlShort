@@ -23,33 +23,34 @@ function App() {
       return false
     }
   }
-  const changeHandleUrl = (e, type) => {
+  const changeHandleUrl = (e) => {
     const url = e.target.value;
+
     if(!isValidUrl(url)){
       setErrorMsg('Error, Url is not valid')
     } else {
-        if(type!=='origin'){
+        if(url.includes(baseHost)){
           setShortURl(url);
           setMethod('GET')
-        } else if(type==='origin'){
+        } else {
           setOriginalUrl(url);
           setMethod('POST')
-        } else {
-          console.error("Error");
         }
+        console.error("Error");
     }
   }
   const clearAll = () => {
     setErrorMsg('');
     setShortURl('');
     setOriginalUrl('');
-
+    setrealLink({linktext: '',
+    redirect: ''})
 
   }
   const getOriginalUrlServer = () =>{
     let body;
     if (shortUrl.includes('localhost:3000/')) {
-        body = shortUrl.replace('localhost:3000/','localhost:5000/');
+        body = shortUrl.replace('localhost:3000/','localhost:5000/urls/');
     } else {
       setErrorMsg("Error")
     }
@@ -94,7 +95,7 @@ function App() {
     }
   }
   const Link = () =>{
-    if(realLink.redirect.length > 1){
+    if(realLink|| realLink.redirect.length > 1){
       return <p>Your Url Here: <a rel="noopener noreferrer" target="_blank" href={realLink.redirect}>{realLink.linktext}</a></p>
     } else {
       return <p>No Link was submited</p>
@@ -105,27 +106,14 @@ function App() {
       <h3>CUSTOM URL SHORTNER FOR TractionCo</h3>
       <div className="Orig_URL_container">
         <p><Link onClick={clearAll}/></p>
-        <p className="url_title">Original URL</p>
-        <input className="input_url" type="url" onChange={(e)=>changeHandleUrl(e, 'origin')} placeholder="Original URL"/>
-        <p className="url_title">Short URL</p>
-        <input className="input_url" type="url" onChange={(e)=>changeHandleUrl(e, 'short')} placeholder="Original URL"/>
+        <p className="url_title">URL</p>
+        <input className="input_url" type="url" onChange={(e)=>changeHandleUrl(e)} placeholder="Type URL"/>
         <br />
         <button onClick={getURL} className="success_button">Get URl</button>
+
       </div>
+
     </div>
   );
 }
-
 export default App;
-
-
-// <div className="App">
-// <header className="App-header">
-//   <h3>URL shortner for TractionCo</h3>
-//     <div className="Input">
-//       <input type="text" className="Btn" placeholder="Enter Url" onChange={changeHandleUrl}/>
-//       <Link onClick={clearAll}/>
-//     </div>
-//     <button onClick={getURL} className="Btn success">Get URl</button>
-// </header>
-// </div>
