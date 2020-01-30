@@ -23,15 +23,15 @@ function App() {
       return false
     }
   }
-  const changeHandleUrl = (e) => {
+  const changeHandleUrl = (e, type) => {
     const url = e.target.value;
     if(!isValidUrl(url)){
       setErrorMsg('Error, Url is not valid')
     } else {
-        if(url.includes(baseHost)){
+        if(type!=='origin'){
           setShortURl(url);
           setMethod('GET')
-        } else if(!url.includes(baseHost)){
+        } else if(type==='origin'){
           setOriginalUrl(url);
           setMethod('POST')
         } else {
@@ -101,17 +101,31 @@ function App() {
     }
   }
   return (
-    <div className="App">
-      <header className="App-header">
-        <h3>URL shortner for TractionCo</h3>
-          <div className="Input">
-            <input type="text" className="Btn" placeholder="Enter Url" onChange={changeHandleUrl}/>
-            <Link onClick={clearAll}/>
-          </div>
-          <button onClick={getURL} className="Btn success">Get URl</button>
-      </header>
+    <div className="main_page_container">
+      <h3>CUSTOM URL SHORTNER FOR TractionCo</h3>
+      <div className="Orig_URL_container">
+        <p><Link onClick={clearAll}/></p>
+        <p className="url_title">Original URL</p>
+        <input className="input_url" type="url" onChange={(e)=>changeHandleUrl(e, 'origin')} placeholder="Original URL"/>
+        <p className="url_title">Short URL</p>
+        <input className="input_url" type="url" onChange={(e)=>changeHandleUrl(e, 'short')} placeholder="Original URL"/>
+        <br />
+        <button onClick={getURL} className="success_button">Get URl</button>
+      </div>
     </div>
   );
 }
 
 export default App;
+
+
+// <div className="App">
+// <header className="App-header">
+//   <h3>URL shortner for TractionCo</h3>
+//     <div className="Input">
+//       <input type="text" className="Btn" placeholder="Enter Url" onChange={changeHandleUrl}/>
+//       <Link onClick={clearAll}/>
+//     </div>
+//     <button onClick={getURL} className="Btn success">Get URl</button>
+// </header>
+// </div>
