@@ -40,11 +40,13 @@ TODO:
   * Add Server real server app
   * Move URL Shortnerlogic from Front-End to Back-End
   * Add mongoDB: (easy to scale)
+  ```
         Data Capacity Model: 
         ** Long URL(customers url) - 2048 chars(2kb)
         ** Short URL(app) - id token is 8 chars (if app domain will be like: https://short_us.com) =>      12 + 8 chars/bytes
         ** Created at 7 bytes
         ** Expired at 7 chars
+  ```
   * Add check against db that shortUrlid is not exist in db
 
 - Initial Security
